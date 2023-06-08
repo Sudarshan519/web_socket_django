@@ -18,6 +18,12 @@ from django.urls import path
 import myapp.routing 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myproject.settings')
 
+# application = ProtocolTypeRouter(
+#     {
+#         "http": get_asgi_application(),
+#         # Just HTTP for now. (We can add other protocols later.)
+#     }
+# )
 application = ProtocolTypeRouter({"http":get_asgi_application(),
                                   "websocket": AllowedHostsOriginValidator(
         AuthMiddlewareStack(

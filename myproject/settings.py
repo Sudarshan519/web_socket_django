@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+     'daphne',
     'channels',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+  'chat',
     'myapp',
 ]
 
@@ -138,14 +139,13 @@ AUTHENTICATION_BACKENDS = [
 
 
 
-SESAME_MAX_AGE = 30
+# SESAME_MAX_AGE = 30
 ASGI_APPLICATION="myproject.asgi.application"
 
 CHANNEL_LAYERS = {
-    'default':{
-        'BACKEND':'channels.layers.InMemoryChannelLayer'
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
     }
 }
-
 
  
