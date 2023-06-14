@@ -1,0 +1,49 @@
+{
+    "data": {
+        "slug": "Rastriya-Geet",
+        "name": "Rastriya-Geet",
+        "items": [
+            {
+                "type": "audiobook",
+                "title": "Mahabharat Katha",
+                "slug": 1,
+                "description": "Mahabharat Katha Discover and read free books by indie authors as well as tons of classic books. Great selection of modern and classic books waiting to be discovered. Resume website. CV.",
+                "language": "nepali",
+                "logo": "https:\/\/mnmdev1.truestreamz.com\/images\/d9NB3537V20khEATkx18XgpHyLV9lnTmfKIGJATy.jpeg",
+                "redirect_link": "https:\/\/mnmdev1.truestreamz.com\/api\/net-tv\/audiobooks\/1",
+                "is_purchase": "free",
+                "purchase_type": "free",
+                "prices": [],
+                "genre": "rock,Lok-Geet,Rastriya-Geet,Bhajan,Adventure,Animation,Cartoon",
+                "content_provider": {
+                    "id": 1,
+                    "name": "MOMO",
+                    "logo": "https:\/\/mnmdev1.truestreamz.com\/images\/contentProvider\/profile\/dyb8xxjnyohd2tg6.png"
+                }
+            },
+            {
+                "type": "audiobook",
+                "title": " The Pilgrim\u2019s Progress",
+                "slug": 2,
+                "description": "Discover and read free books by indie authors as well as tons of classic books. Great selection of modern and classic books waiting to be discovered. Resume website. CV.",
+                "language": "english",
+                "logo": "https:\/\/mnmdev1.truestreamz.com\/images\/NCVRYioDihOFHbNflHRR2eK2y1wHICR4M09mzsGC.jpeg",
+                "redirect_link": "https:\/\/mnmdev1.truestreamz.com\/api\/net-tv\/audiobooks\/2",
+                "is_purchase": "buy",
+                "purchase_type": "premium",
+                "prices": [],
+                "genre": "Lok-Geet,Rastriya-Geet,Bhajan,Adventure,Animation,Comedy",
+                "content_provider": {
+                    "id": 1,
+                    "name": "MOMO",
+                    "logo": "https:\/\/mnmdev1.truestreamz.com\/images\/contentProvider\/profile\/dyb8xxjnyohd2tg6.png"
+                }
+            }
+        ],
+        "total_items": 2,
+        "per_page_items": 8,
+        "prev_page_url": "",
+        "next_page_url": "",
+        "total_page": 1
+    }
+}

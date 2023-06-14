@@ -6,31 +6,85 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lobby Html</title>
+    <style>
+        .left {
+            text-align: left;
+        }
 
+        .right {
+            text-align: right;
+        }
+
+        p {
+
+            padding: 4px;
+            border-radius: 8px;
+
+
+        }
+
+        div.message {
+
+            margin-bottom: 30px;
+
+        }
+
+        form {
+            margin-bottom: 10px;
+            position: fixed;
+            width: max-content;
+            bottom: 0;
+        }
+
+        input {
+            display: block;
+            width: max-content;
+            flex: flex-grow;
+            border: 2px solid green;
+
+            border-radius: 10px;
+            width: 70%;
+            padding: 10px;
+        }
+    </style>
 </head>
 
 <body>
     <h1>Lets Chat!</h1>
-    <form id="form">
-        <input type="text" name="message" />
 
-    </form>
 
     <div id="messages"></div>
+    <form id="form">
+        <span>
+            <input type="text" name="message" placeholder="Enter your message" />
+
+        </span>
+
+    </form>
     <script type="text/javascript">
         let url = `ws://${window.location.host}/ws/chat/logg/`
-
+        var x = 0;
         const chatSocket = new WebSocket(url)
         chatSocket.onmessage = function (e) {
             let data = JSON.parse(e.data)
-            console.log("Data:", data)
 
+            x += 1
+            console.log(x);
+
+            let even = x % 2 == 0
+            let content = `<div class="${even ? 'left' : 'right'}">
+           <span>User says: </span>
+                                        <span>${data.message}</span> 
+                                        
+                                    </div>`
             if (data.type === 'chat') {
                 let messages = document.getElementById('messages')
-
                 messages.insertAdjacentHTML('beforeend', `<div>
-                                        <p>${data.message}</p>
+                                       ${content} 
                                     </div>`)
+
+
+                window.scrollTo(0, document.body.scrollHeight);
             }
         }
 
@@ -39,6 +93,7 @@
             e.preventDefault()
             let message = e.target.message.value
             chatSocket.send(JSON.stringify({
+                "userid": Math.random(),
                 'message': message
             }))
             form.reset()
